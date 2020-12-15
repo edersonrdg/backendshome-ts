@@ -12,8 +12,9 @@ const Analyzecontroller = new AnalyzeController()
 routes.post('/newcompany', companycontroller.create)
 
 routes.get('/analyze', Analyzecontroller.index)
-routes.delete('/analyze/:id', Analyzecontroller.destroy)
+routes.delete('/analyze/delete/:id', Analyzecontroller.destroy)
 
 routes.get('/adm', admcontroller.index)
+routes.delete('/adm/delete/:id', admcontroller.destroy)
 
 export default routes
