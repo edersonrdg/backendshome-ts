@@ -17,6 +17,7 @@ export default class companyController {
     try {
       if (comp_cnpj == undefined) {
         await db('companies').insert({
+          Code: "padrao",
           name,
           phonenumber,
           cpf,
@@ -38,6 +39,7 @@ export default class companyController {
       }
       else {
         await db('companies').insert({
+          Code: "padrao",
           name,
           phonenumber,
           cpf,

@@ -3,6 +3,7 @@ import Knex from 'knex'
 export async function up(knex: Knex) {
   return knex.schema.createTable('companies', table => {
     table.increments('id').primary()
+    table.string('Code').notNullable();
     table.string('name').notNullable()
     table.integer('phonenumber').notNullable()
     table.integer('cpf').notNullable()

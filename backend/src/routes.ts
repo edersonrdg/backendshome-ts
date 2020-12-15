@@ -13,6 +13,7 @@ routes.post('/newcompany', companycontroller.create)
 
 routes.get('/analyze', Analyzecontroller.index)
 routes.delete('/analyze/delete/:id', Analyzecontroller.destroy)
+routes.put('/analyze/pass/:id', Analyzecontroller.update)
 
 routes.get('/adm', admcontroller.index)
 routes.delete('/adm/delete/:id', admcontroller.destroy)

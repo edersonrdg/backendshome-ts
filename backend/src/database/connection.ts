@@ -6,7 +6,7 @@ const db = knex({
     host : 'localhost',
     user : 'postgres',
     password : 'password',
-    database : 'dbshome'
+    database : 'shomedb'
   },
 })
 

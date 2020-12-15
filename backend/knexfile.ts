@@ -6,7 +6,7 @@ module.exports = {
     host : 'localhost',
     user : 'postgres',
     password : 'password',
-    database : 'dbshome'
+    database : 'shomedb'
   },
   migrations: {
     directory: path.resolve(__dirname, 'src', 'database', 'migrations')
