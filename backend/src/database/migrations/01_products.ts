@@ -6,7 +6,7 @@ export async function up(knex: Knex) {
     table.string('title').notNullable()
     table.string('description').notNullable()
     table.string('category').notNullable()
-    table.string('price').notNullable()
+    table.integer('price').notNullable()
     table.string('image').notNullable()
 
     table.integer('company_id').notNullable()

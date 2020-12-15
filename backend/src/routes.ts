@@ -1,9 +1,9 @@
 import express from 'express'
+import companyController from './controllers/companyController'
 
 const routes = express.Router()
+const companycontroller = new companyController()
 
-routes.get('/', (request, response) => {
-  return response.send('aplication started on routes')
-})
+routes.post('/newcompany', companycontroller.create)
 
 export default routes

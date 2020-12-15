@@ -1,5 +1,4 @@
 import path from 'path'
-require('dotenv').config();
 
 module.exports = {
   client: 'pg',
@@ -7,7 +6,7 @@ module.exports = {
     host : 'localhost',
     user : 'postgres',
     password : 'password',
-    database : 'shomedb'
+    database : 'dbshome'
   },
   migrations: {
     directory: path.resolve(__dirname, 'src', 'database', 'migrations')

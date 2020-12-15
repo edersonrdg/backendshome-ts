@@ -1,5 +1,4 @@
 import knex from 'knex'
-require('dotenv').config();
 
 const db = knex({
   client: 'pg',
@@ -7,7 +6,7 @@ const db = knex({
     host : 'localhost',
     user : 'postgres',
     password : 'password',
-    database : 'shomedb'
+    database : 'dbshome'
   },
 })
 
