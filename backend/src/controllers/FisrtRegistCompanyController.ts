@@ -14,7 +14,29 @@ export default class companyController {
       comp_phonenumber,
       comp_area } = request.body
 
-      try {
+    try {
+      if (comp_cnpj == undefined) {
+        await db('companies').insert({
+          name,
+          phonenumber,
+          cpf,
+          office,
+          comp_cnpj: 0,
+          comp_name,
+          comp_email,
+          comp_phonenumber,
+          comp_area,
+          username: "padrao",
+          password: "padrao",
+          avatar: "padrao",
+          banc_name: "padrao",
+          banc_POU_or_CR: "padrao",
+          banc_operation: "padrao",
+          banc_pf: false,
+          banc_mei: false,
+        })
+      }
+      else {
         await db('companies').insert({
           name,
           phonenumber,
@@ -34,11 +56,11 @@ export default class companyController {
           banc_pf: false,
           banc_mei: false,
         })
-        return response.status(201).send()
-
-      } catch (error) {
-        return response.status(400).send('error')
       }
-      
+      return response.status(201).send()
+
+    } catch (error) {
+      return response.status(400).send('error')
+    }
   }
 }
