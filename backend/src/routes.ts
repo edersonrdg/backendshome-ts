@@ -26,5 +26,6 @@ routes.put('/finishregister/:Code', lasregistercompanycontroller.update)
 
 routes.get('/products', productcontroller.index)
 routes.post('/products/:id', productcontroller.create)
+routes.delete('/products/:id', productcontroller.destroy)
 
 export default routes
