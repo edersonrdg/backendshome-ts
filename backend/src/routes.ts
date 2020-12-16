@@ -25,5 +25,6 @@ routes.get('/finishregister/:Code', lasregistercompanycontroller.index)
 routes.put('/finishregister/:Code', lasregistercompanycontroller.update)
 
 routes.get('/products', productcontroller.index)
+routes.post('/products/:id', productcontroller.create)
 
 export default routes
