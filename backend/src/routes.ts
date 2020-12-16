@@ -20,5 +20,6 @@ routes.get('/adm', admcontroller.index)
 routes.delete('/adm/delete/:id', admcontroller.destroy)
 
 routes.get('/finishregister/:Code', lasregistercompanycontroller.index)
+routes.put('/finishregister/:Code', lasregistercompanycontroller.update)
 
 export default routes
