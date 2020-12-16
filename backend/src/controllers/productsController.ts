@@ -13,13 +13,13 @@ export default class productController {
       description,
       category,
       price,
-      image 
-      } = request.body
+      image
+    } = request.body
 
     const { id } = request.params
 
     let company = await db('companies').where('companies.id', '=', id)
-    if(!company[0]) return response.status(400).send('Invalid company')
+    if (!company[0]) return response.status(400).send('Invalid company')
 
     await db('products').insert({
       title,
@@ -32,17 +32,43 @@ export default class productController {
 
     return response.status(200).send()
   }
-  async destroy(request: Request, response: Response){
+
+  async update(request: Request, response: Response) {
+    const { id } = request.params
+    const { productid,
+      title,
+      description,
+      category,
+      price,
+      image } = request.body
+
+    let company = await db('companies').where('companies.id', '=', id)
+    if (!company[0]) return response.status(400).send('invalid company')
+
+    let product = await db('products').where('products.company_id', '=', id)
+      .where('products.id', '=', productid).update({
+        title,
+        description,
+        category,
+        price,
+        image
+      })
+
+    if (!product) return response.status(400).send('Invalid id product')
+
+    return response.status(200).send()
+  }
+  async destroy(request: Request, response: Response) {
     const { id } = request.params
     const { productid } = request.body
 
     let company = await db('companies').where('companies.id', '=', id)
-    if(!company[0]) return response.status(400).send('invalid company')
+    if (!company[0]) return response.status(400).send('invalid company')
 
     let product = await db('products').where('products.company_id', '=', id)
       .where('products.id', '=', productid).delete()
-    
-    if(!product) return response.status(400).send('Invalid id product')
+
+    if (!product) return response.status(400).send('Invalid id product')
 
     return response.status(200).send()
   }
