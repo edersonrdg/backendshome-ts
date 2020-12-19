@@ -12,7 +12,8 @@ export default class companyController {
       comp_name,
       comp_email,
       comp_phonenumber,
-      comp_area } = request.body
+      comp_area 
+      } = request.body
 
     try {
       if (comp_cnpj == undefined) {
